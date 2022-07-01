@@ -7,15 +7,15 @@ Installing
 
 .. code-block:: bash
 
-    pip install report-classic-project
+    pip install reportclassicproject
 
 Usage
 =====
 
 .. code-block:: python
 
-    from utils.general.report_line_detail import ReportLineDetail
-    from utils.general.report_mline_detail import ReportMLineDetail
+    from reportclassicproject import ReportLineDetail
+    from reportclassicproject import ReportMLineDetail
 
     def sample_line_detail(request):
     relat = ReportLineDetail(titulo="Câmara Municipal de de São Bernardo do Campo",  # noqa: E501

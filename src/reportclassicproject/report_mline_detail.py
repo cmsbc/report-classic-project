@@ -1,4 +1,4 @@
-from utils.general.report_classic import ReportClassicClass
+from report_classic import ReportClassicClass
 
 
 class ReportMLineDetail(ReportClassicClass):

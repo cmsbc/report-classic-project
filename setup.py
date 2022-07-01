@@ -2,8 +2,8 @@ from setuptools import setup, find_packages
 
 
 setup(
-    name='report-classic-project',
-    version='0.3',
+    name='reportclassicproject',
+    version='0.1',
     license='MIT',
     author="Câmara Municipal de São Bernardo do Campo, SP, Brazil",
     author_email='informatica@camarasbc.sp.gov.br',
@@ -14,7 +14,8 @@ setup(
     install_requires=[
           'reportlab',
           'django',
-          'datetime'
+          'datetime',
+          'requests'
       ],
     description="This is a ReportClassic Project made to print labels and reports in PDF FOR DJANGO FRAMEWORK.",
 )
