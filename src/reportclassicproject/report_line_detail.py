@@ -1,4 +1,4 @@
-from report_classic import ReportClassicClass
+from reportclassicproject.report_classic import ReportClassicClass
 
 
 class ReportLineDetail(ReportClassicClass):
