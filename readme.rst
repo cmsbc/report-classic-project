@@ -1,6 +1,6 @@
 ReportClassic Project
 ===============
-This is a ReportClassic Project made to print labels and reports in PDF.
+This is a ReportClassic Project made to print labels and reports in PDF FOR DJANGO FRAMEWORK.
 
 Installing
 ============
