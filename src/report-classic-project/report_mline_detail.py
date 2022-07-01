@@ -3,11 +3,11 @@ from utils.general.report_classic import ReportClassicClass
 
 class ReportMLineDetail(ReportClassicClass):
 
-    def width_column(self, lista):
+    def width_column(self, lista, larg_folha=0):
         """Cria lista de limite de tamanho das colunas do relatório line"""  # noqa: E501
         rtn = []
         for key, value in lista.items():
-            for item in super().width_column(value):
+            for item in super().width_column(value, larg_folha=0):
                 rtn.append([key] + item)
         return rtn
 
@@ -74,8 +74,8 @@ class ReportMLineDetail(ReportClassicClass):
             max_width = detail[2]
             linha = altura - self.mm2p(self.altura_linha) * detail[0]
             texto = self.text_redutor(texto=detail[3], max_width=max_width)
-            self.print_string(coluna=detail[1], linha=linha, texto=texto,
-                              options=detail[4])
+            self.print_string(coluna=self.mm2p(detail[1]), linha=linha,
+                              texto=texto, options=detail[4])
             qtde = detail[0]
         self.altura_atual = altura - self.mm2p(self.altura_linha) * qtde
         if separator:

@@ -51,8 +51,8 @@ class ReportLineDetail(ReportClassicClass):
             max_width = detail[1]
             linha = altura - self.mm2p(self.altura_linha)
             texto = self.text_redutor(texto=detail[2], max_width=max_width)
-            self.print_string(coluna=detail[0], linha=linha, texto=texto,
-                              options=detail[3])
+            self.print_string(coluna=self.mm2p(detail[0]), linha=linha,
+                              texto=texto, options=detail[3])
         self.altura_atual = altura - self.mm2p(self.altura_linha)
         if separator:
             self.linha(altura=self.altura_atual - self.mm2p(2))

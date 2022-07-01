@@ -79,7 +79,7 @@ class ReportClassicClass:
     def mm2p(self, milimetros):
         """Converte milimetros para points.
         Retorna pontos"""
-        return milimetros * 2.834645669291339
+        return float(milimetros) * 2.834645669291339
 
     def p2mm(self, p):
         """Converte points para milimetros.
@@ -169,13 +169,18 @@ class ReportClassicClass:
     def text_redutor(self, texto="", max_width=0):
         """Redutor de texto baseado no tamanho da fonte e tamanho definido"""
         rtn = simpleSplit(texto, self.fontname, self.fontsize, max_width)
-        return rtn[0]
+        if len(rtn) == 0:
+            return texto
+        else:
+            return rtn[0]
 
-    def width_column(self, lista):
+    def width_column(self, lista, larg_folha=0):
         """Cria lista de limite de tamanho das colunas do relatório line"""  # noqa: E501
         rtn = []
         cont = -1
         ult_pos = 0
+        if larg_folha <= 0:
+            larg_folha = self.largura - self.mm2p(self.borda_direita)
         for key, value in lista.items():
             if cont == -1:
                 ult_pos = self.mm2p(key)
@@ -184,8 +189,7 @@ class ReportClassicClass:
                 rtn.append([self.p2mm(ult_pos), self.mm2p(key) - ult_pos - 5])
                 ult_pos = self.mm2p(key)
                 cont = 1
-        rtn.append([self.p2mm(ult_pos), self.largura -
-                   self.mm2p(10) - ult_pos - 5])
+        rtn.append([self.p2mm(ult_pos), larg_folha - ult_pos - 5])
         return rtn
 
     def print_string(self, coluna=0, linha=0, texto="", options={}):
@@ -206,7 +210,7 @@ class ReportClassicClass:
             fontname_old = self.pdf._fontname
             fontsize_old = self.pdf._fontsize
             self.pdf.setFont(fontname, fontsize)
-        self.pdf.drawString(self.mm2p(coluna), linha, texto)
+        self.pdf.drawString(coluna, linha, texto)
         if alterar:
             self.pdf.setFont(fontname_old, fontsize_old)
 
