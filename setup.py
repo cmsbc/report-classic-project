@@ -5,7 +5,7 @@ setup(
     name='report-classic-project',
     version='0.1',
     license='MIT',
-    author="Cãmara Municipal de São Bernardo do Campo, SP, Brazil",
+    author="Câmara Municipal de São Bernardo do Campo, SP, Brazil",
     author_email='informatica@camarasbc.sp.gov.br',
     packages=find_packages('src'),
     package_dir={'': 'src'},
@@ -16,5 +16,5 @@ setup(
           'django',
           'datetime'
       ],
-
+    description="This is a ReportClassic Project made to print labels and reports in PDF FOR DJANGO FRAMEWORK.",
 )
