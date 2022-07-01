@@ -3,7 +3,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='report-classic-project',
-    version='0.1',
+    version='0.3',
     license='MIT',
     author="Câmara Municipal de São Bernardo do Campo, SP, Brazil",
     author_email='informatica@camarasbc.sp.gov.br',
